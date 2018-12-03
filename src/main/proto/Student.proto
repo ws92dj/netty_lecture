@@ -1,0 +1,24 @@
+syntax = "proto3";
+package com.dingjian.proto;
+
+
+option java_package = "com.dingjian.proto";
+option java_outer_classname = "StudentProto";
+option java_multiple_files = true;
+
+//客户端发送数据，服务端响应结果
+service StudentService{
+    rpc GetRealNameByUsername(MyRequest) returns (MyResponse){}
+}
+
+
+message MyRequest{
+    string username = 1;
+}
+
+message MyResponse{
+    string realname = 2;
+}
+
+
+
